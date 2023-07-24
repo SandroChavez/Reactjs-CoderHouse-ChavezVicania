@@ -10,10 +10,15 @@ html{
 }
 
 body{
+    position: absolute;
     header{
         background-color: $color-principal;
         
         width: 100%;
+
+        position: sticky;
+
+        z-index: 2;
 
         nav{
             padding: 0 3rem;
@@ -79,6 +84,7 @@ body{
     }
     main{
         padding: 25px 3rem;
+        
         .Welcome{
             padding-bottom: 30px;
 
@@ -102,8 +108,17 @@ body{
                 justify-content: center;
                 align-items: center;
 
+                padding: 10px 0;
+
                 gap: 5px;
 
+                border-radius: 10px;
+
+                transition: all 0.1s;
+                &:hover{
+                    filter: opacity(0.9);
+                    background-color: rgb(222, 222, 222);
+                }
                 .Item--img{
                     overflow:hidden;
                     img{
@@ -113,10 +128,6 @@ body{
                         border-radius: 10px;
 
                         transition: all 0.4s;
-                        &:hover{
-                            border-radius: 10px;
-                            transform:scale(0.95);
-                        }
                     }
                 }
                 .Item--content{

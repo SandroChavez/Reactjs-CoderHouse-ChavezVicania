@@ -86,4 +86,6 @@ const GAMES = [
     }  
 ]
 
-export default GAMES
+return getGames = () => GAMES
+
+export default getGames
