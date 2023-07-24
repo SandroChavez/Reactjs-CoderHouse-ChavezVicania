@@ -83,9 +83,7 @@ const GAMES = [
         price:45,
         img:"https://store-images.s-microsoft.com/image/apps.31019.70406876433810089.4beffaca-3fee-4154-a21f-ecd9b3bedbb3.cc90d42b-0620-473e-a51e-52f0e5ff8454",
         stock:6,
-    }  
-]
+    }
+];
 
-return getGames = () => GAMES
-
-export default getGames
+export default GAMES
