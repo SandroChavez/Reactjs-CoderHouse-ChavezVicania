@@ -1,9 +1,9 @@
 import React from "react";
 import Carrito from "../../assets/carrito.svg"
 
-const CartWidget = ({className}) => {
+const CartWidget = () => {
     return(
-        <div className={className} >
+        <div className={"CartWidget"} >
             {/* Icono Carrito */}
             <div>
                 <img src={Carrito} alt="carrito" />

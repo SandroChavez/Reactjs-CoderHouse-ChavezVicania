@@ -4,52 +4,48 @@ html{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #000000;
 }
+*{
+    margin: 0;
+    border: 0;
+}
 body{
-    margin: 0;
-}
-p{
-    margin: 0;
-}
-header{
-    position: sticky;
-    background-color: $color-principal;
-    .header-div{
-        margin: 0 4vh;
-        .NavBar{
-            width: 100%;
-            height: 100px;
+    header{
+        background-color: $color-principal;
         
+        width: 100%;
+
+        nav{
+            padding: 0 3rem;
+
             display: grid;
-            grid-template-columns: auto 1fr 100px ;
-    
-            justify-content: center;
-            align-items: center;
-        
-            flex-direction: row;
-            .Icon{
+            grid-template-columns: 80px 3fr 1fr;
+
+            gap: 15px;
+
+            height: 80px;
+            .Logo{
                 display: flex;
-                justify-self: end;
-    
+                justify-content: center;
+                align-items: center;
                 img{
-                    width: 50px;
+                    width: 55px;
                     height: auto;
-        
+                    
                     border-radius: 50%;
                 }
             }
             .BarraBusqueda{
     
                 display: flex;
-                justify-self: center;
-    
+                justify-content: center;
+                align-items: center;
+                    
                 input{
-                    width: max(200px , 50vh);
-                    height: 20px;
-        
-                    border: 0;
-        
+                    width: max(200px , 60vh);
+                    height: 25px;
+                        
                     border-radius: 5px;
-                    transition: all 0.4s;
+                    transition: all 0.3s;
                     &:focus{
                         background-color: rgb(255, 255, 197);
                     }
@@ -62,6 +58,12 @@ header{
                 align-items: center;
         
                 gap: 10px;
+                p{
+                    transition: all 0.2s;
+                    &:hover{
+                        transform: scale(1.3);
+                    }
+                }
                 img{
                     width: 30px;
                     height: auto;
@@ -75,3 +77,5 @@ header{
         }
     }
 }
+
+

@@ -1,12 +1,16 @@
 import React from "react";
-import Logo from "../../assets/logo-fenix.png"
 
-const Icon = ({className}) => {
-    return(
-        <div className={className}>
-            <img src={Logo} alt="logo-fenix" />
-        </div>
-    )
+import LogoFenix from "../../assets/logo-fenix.png"
+
+
+const Logo = () => {
+  return (
+    <div className={"Logo"} >
+      <a href="#">
+        <img src={LogoFenix} alt={"Logo-Fenix"} />
+      </a>
+    </div>
+ )
 }
 
-export default Icon
+export default Logo

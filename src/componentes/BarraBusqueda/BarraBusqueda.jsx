@@ -1,8 +1,8 @@
 import React from "react"
 
-const BarraBusqueda = ({className}) => {
+const BarraBusqueda = () => {
     return(
-        <div className={className}>
+        <div className="BarraBusqueda">
             <input type="text" placeholder="Barra de Busqueda"/>
         </div>
     )

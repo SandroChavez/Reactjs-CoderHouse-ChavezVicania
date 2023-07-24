@@ -1,27 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import NavBar from "./componentes/NavBar/NavBar";
-import Logo from "./componentes/Logo/Logo";
-import CartWidget from "./componentes/CartWidget/CartWidget";
-import BarraBusqueda from "./componentes/BarraBusqueda/BarraBusqueda";
-import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
+import Home from "./componentes/Home/Home"
 import "./estilos/style.css";
 
 const App = () => {
+
+
   return (
     <>
-      <header>
-        <div className="header-div" >
-          <NavBar className={"NavBar"}>
-            <Logo className={"Icon"} />
-            <BarraBusqueda className={"BarraBusqueda"} />
-            <CartWidget className={"CartWidget"} />
-          </NavBar>
-        </div>
-      </header>
-      <main>
-        <ItemListContainer texto={"Lista de juegos"} />
-      </main>
+      <NavBar/>
+      <Home/>
     </>
   );
 };

@@ -1,10 +1,18 @@
 import React from "react";
 
-const NavBar = ({children,className}) =>{
+import Logo from "../Logo/Logo";
+import BarraBusqueda from "../BarraBusqueda/BarraBusqueda"
+import CartWidget from "../CartWidget/CartWidget";
+
+const NavBar = () =>{
     return(
-        <nav className={className} >   
-            {children}
-        </nav>
+        <header>
+            <nav>
+                <Logo/>
+                <BarraBusqueda/>
+                <CartWidget/>
+            </nav>
+        </header>
     )
 };
 
