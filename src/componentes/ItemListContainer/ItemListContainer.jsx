@@ -1,9 +1,21 @@
 import React from "react";
+import Item from "../Item/Item";
 
-const ItemListContainer = ({texto}) => {
+
+const ItemListContainer = ({list}) => {
+
     return (
-        <div>
-            <p>{texto}</p>
+        <div className="ItemListContainer" >
+            {list.map(item => {
+                return(
+                    <Item
+                    key={item.id}
+                    img={item.img}
+                    category={item.category}
+                    tittle={item.tittle}
+                    price={item.price}/>
+                )
+            })}
         </div>
     )
 }

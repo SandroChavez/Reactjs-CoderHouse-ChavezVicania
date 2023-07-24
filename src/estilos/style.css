@@ -1,6 +1,6 @@
 html {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #000000;
+  color: #1f1f1f;
 }
 
 * {
@@ -15,7 +15,7 @@ body header {
 body header nav {
   padding: 0 3rem;
   display: grid;
-  grid-template-columns: 80px 3fr 1fr;
+  grid-template-columns: 80px 1fr 80px;
   gap: 15px;
   height: 80px;
 }
@@ -62,4 +62,60 @@ body header nav .CartWidget img {
 }
 body header nav .CartWidget img:hover {
   transform: scale(1.1);
+}
+body main {
+  padding: 25px 3rem;
+}
+body main .Welcome {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .Welcome .Welcome-text {
+  font-size: 30px;
+}
+body main .ItemListContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+body main .ItemListContainer .Item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+body main .ItemListContainer .Item .Item--img {
+  overflow: hidden;
+}
+body main .ItemListContainer .Item .Item--img img {
+  width: 170px;
+  height: auto;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+body main .ItemListContainer .Item .Item--img img:hover {
+  border-radius: 10px;
+  transform: scale(0.95);
+}
+body main .ItemListContainer .Item .Item--content .Item--content-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
+}
+body main .ItemListContainer .Item .Item--content .Item--content-info .Item--content-category {
+  font-size: 15px;
+  color: rgba(62, 62, 62, 0.75);
+}
+body main .ItemListContainer .Item .Item--content .Item--content-info .Item--content-tittle {
+  font-size: 18px;
+}
+body main .ItemListContainer .Item .Item--content .Item--content-info .Item--content-preice {
+  display: flex;
+  justify-self: center;
+  font-size: 18px;
 }/*# sourceMappingURL=style.css.map */

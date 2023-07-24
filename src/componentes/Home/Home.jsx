@@ -1,13 +1,14 @@
 import React from 'react'
 
+import Welcome from '../Welcome/Welcome'
 import ItemListContainer from "../ItemListContainer/ItemListContainer"
+import GAMES from "../../lib/games.request"
 
 const Home = () => {
   return (
     <main>
-        <div>
-            <ItemListContainer/>
-        </div>
+        <Welcome/>
+        <ItemListContainer list={GAMES}/>
     </main>
   )
 }
