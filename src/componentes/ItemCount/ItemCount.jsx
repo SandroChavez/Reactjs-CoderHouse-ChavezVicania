@@ -14,14 +14,16 @@ const ItemCount = ({ stock, onAdd }) => {
 
   return (
     <div className="item-count">
-      <div className="item-count__buttons">
+      <div className="item-count--buttons">
         <button onClick={() => handleSub()}>-</button>
         <span>{count}</span>
         <button onClick={() => handleSum()}>+</button>
       </div>
-      <button className="item-count__add" disabled={!stock} onClick={() => onAdd(count)}>
-        Agregar a carrito
-      </button>
+      <div className="item-count--add">
+        <button  disabled={!stock} onClick={() => onAdd(count)}>
+          Agregar a carrito
+        </button>
+      </div>
     </div>
   );
 };

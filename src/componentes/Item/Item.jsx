@@ -18,7 +18,7 @@ const Item = ({
         </div>
         <div className='Item--content'>
             <div className='Item--content-info'>
-                <span className='Item--content-category' >{category}</span>
+                <span className='Item--content-category' >{category.join(" - ")}</span>
                 <span className='Item--content-tittle' >{tittle}</span>
                 <span className='Item--content-price'>${price}</span>
             </div>         

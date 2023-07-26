@@ -114,6 +114,34 @@ const GAMES = [
         price:45,
         img:"https://store-images.s-microsoft.com/image/apps.31019.70406876433810089.4beffaca-3fee-4154-a21f-ecd9b3bedbb3.cc90d42b-0620-473e-a51e-52f0e5ff8454",
         stock:6,
+    },{
+        id:13,
+        tittle:"Hello Neighbor 2",
+        category:[
+            "Action",
+            "Adventure",
+        ],
+        price:55,
+        img:"https://store-images.s-microsoft.com/image/apps.43743.13538643730533052.28638370-579e-40f3-af52-7a9f26631587.67554df9-b3c0-4a7e-b257-c5909ca201be?q=90&w=177&h=265",
+        stock:32,
+    },{
+        id:14,
+        tittle:"Stardew Valle",
+        category:[
+            "Farm",
+        ],
+        price:55,
+        img:"https://store-images.s-microsoft.com/image/apps.51447.13838479673159593.08fca22c-85fe-467d-8f34-cca2715208c0.8a757252-51c8-488e-8a07-044e835983b2?q=90&w=177&h=265",
+        stock:32,
+    },{
+        id:15,
+        tittle:"Lonely Mountains: Downhill",
+        category:[
+            "Plataforms",
+        ],
+        price:34,
+        img:"https://store-images.s-microsoft.com/image/apps.4555.13794437146560212.1c2132e1-8e75-4ecb-8f54-2474cd20e67a.b855d795-fc09-4fac-a974-0aa07086d762?q=90&w=177&h=265",
+        stock:15,
     }
 ];
 

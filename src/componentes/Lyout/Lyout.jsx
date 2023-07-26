@@ -16,6 +16,14 @@ const Lyout = () =>{
                         <Logo/>
                     </NavLink>
                     <BarraBusqueda/>
+                    <div className="categorys" >
+                        <NavLink to="/" >Home</NavLink>
+                        <NavLink to="/Category/Action" >Action</NavLink>
+                        <NavLink to="/Category/Adventure">Adventure</NavLink>
+                        <NavLink to="/Category/Zombies">Zombies</NavLink>
+                        <NavLink to="/Category/Plataforms">Plataforms</NavLink>
+                        <NavLink to="/Category/Farm">Farm</NavLink>
+                    </div>
                     <CartWidget/>
                 </nav>
             </header>

@@ -24,34 +24,34 @@ const Detail = () => {
   if(!Object.keys(game).length) return
   
   return (
-    <div className='conteiner' >
+    <>
       <h5 className={loanding ? "Loanding" : ""} >{loanding ? "Cargando Datos..." : ""}</h5>
-      <div className='game'>
-        <div className='game--img'>
-          <img src={game.img} alt="" />
-        </div>
-        <div className='game--info'>
-          <div className='game--info-category'>
-            <p>{game.category}</p>
+      <div className='conteiner' >
+        
+        <div className='game'>
+          <div className='game--img'>
+            <img src={game.img} alt="" />
           </div>
-          <div className='game--info-tittle'>
-            <p>{game.tittle}</p>
-          </div>
-          <div>
-            <p>{game.description}</p>
-          </div>
-          <div className='game--buy' >
-            <ItemCount stock={gameStock} />
-            <div>
-              <p>{game.stock > 15 ? `Stock ${gameStock}`:`¡Solo quedan: ${gameStock}!`}</p>
+          <div className='game--info'>
+            <div className='game--info-category'>
+              <p>{game.category.join(" - ")}</p>
             </div>
-          </div>
-          <div className='game--info-price'>
-              
+            <div className='game--info-tittle'>
+              <p>{game.tittle}</p>
+            </div>
+            <div className='game--buy' >
+              <ItemCount stock={gameStock} />
+              <div className='game--stock'>
+                <p>{gameStock > 15 ? `Stock ${gameStock}`:`¡Solo quedan: ${gameStock}!`}</p>
+              </div>
+            </div>
+            <div className='game--info-price'>
+                <p>{game.price}$</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
