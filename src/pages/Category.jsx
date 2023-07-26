@@ -7,15 +7,16 @@ import ItemListContainer from '../componentes/ItemListContainer/ItemListContaine
 
 const Category = () => {
 
-  const {id} = useParams
+  const {id} = useParams()
   const[games,setGames] = useState([]);
   const[loanding,setLoanding] = useState(true);
 
   useEffect(() =>{
     setGames([]);
     setLoanding(true);
-    
-    getGames(id).then(res => {
+
+    getGames(id)
+    .then((res) => {
       setGames(res)
       setLoanding(false)
     })

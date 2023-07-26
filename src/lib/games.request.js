@@ -92,7 +92,7 @@ const GAMES = [
         ],
         price:14,
         img:"https://store-images.s-microsoft.com/image/apps.18298.14041044108785223.82419c4d-359a-436a-b07d-12cf7137d8fc.e5e5d14b-cb4d-4d97-80f0-522af78eb772",
-        stock:8,
+        stock:22,
     },{
         id:11,
         tittle:"PvZ Garden Warfare 2",
@@ -118,23 +118,25 @@ const GAMES = [
 ];
 
 export const getGames = (id) => {
-  const _games = id
-    ? GAMES.filter((game) => game.category.toLowerCase() === [id])
-    : GAMES;
+    const _games = id
+      ? GAMES.filter((game) => {
+        return game.category.some((category) => category == id) == true
+      })
+      : GAMES;
 
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(_games);
-    }, 200);
-  });
+    return new Promise((res) => {
+      setTimeout(() => {
+        res(_games);
+      }, 200);
+    });
 };
 
 export const getGame = (id) => {
-  const game = GAMES.filter((game) => game.id === id)[0];
+  const _game = GAMES.filter((game) => game.id === id)[0];
 
   return new Promise((res) => {
     setTimeout(() => {
-      res(game);
+      res(_game);
     }, 200);
   });
 };

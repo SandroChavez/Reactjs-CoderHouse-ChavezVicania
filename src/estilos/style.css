@@ -77,13 +77,6 @@ body header nav .CartWidget img:hover {
 body main {
   padding: 100px 3rem;
 }
-body main .Loanding {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  padding: 200px 0;
-}
 body main .Welcome {
   display: flex;
   justify-content: center;
@@ -140,6 +133,14 @@ body main .ItemListContainer .Item .Item--content .Item--content-info .Item--con
   font-size: 18px;
 }
 
+.Loanding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 250px 0;
+}
+
 body main .conteiner {
   display: flex;
   justify-content: center;
@@ -179,6 +180,36 @@ body main .conteiner .game .game--info .game--buy {
   gap: 10px;
 }
 body main .conteiner .game .game--info .game--info-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: rgba(77, 77, 77, 0.75);
+  width: 100%;
+  height: 10rem;
+}
+footer .Footer-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+footer .Footer-div .Footer--info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+footer .Footer-div .Footer--info .Footer--contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+footer .Footer-div .Footer--info .Footer--contact div {
   display: flex;
   justify-content: center;
   align-items: center;

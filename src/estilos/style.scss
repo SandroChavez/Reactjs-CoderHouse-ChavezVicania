@@ -90,19 +90,9 @@ body{
                 }
             }
         }
-    }
-    
+    }    
     main{
         padding: 100px 3rem;
-        .Loanding{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 30px;
-
-            padding: 200px 0;
-        }
         .Welcome{
             display: flex;
             justify-content: center;
@@ -178,6 +168,17 @@ body{
     }
 }
 
+//Loanding
+.Loanding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+
+    padding: 250px 0;
+}
+
 // Detail
 body{
     main{
@@ -238,5 +239,42 @@ body{
     }
 }
 
+footer{
+    background-color: $category-font-color;
+
+    width: 100%;
+    height: 10rem;
+    .Footer-div{
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        .Footer--info{
+            display: flex;
+    
+            justify-content: center;
+            align-items: center;
+    
+            flex-direction: column;
+
+            gap: 20px;
+            .Footer--contact{
+                display: flex;
+    
+                justify-content: center;
+                align-items: center;
+
+                gap: 15px;
+                div{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
 
 

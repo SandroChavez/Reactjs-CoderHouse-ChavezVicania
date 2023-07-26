@@ -3,50 +3,55 @@ import { useParams } from "react-router-dom";
 
 import { getGame } from '../lib/games.request'
 
+import ItemCount from '../componentes/ItemCount/ItemCount';
+
 const Detail = () => {
 
   const {id} = useParams()
   const [game,setGame] = useState({})
+  const[loanding,setLoanding] = useState(true)
+  const[gameStock,SetGameStock] = useState()
 
   useEffect(() => {
     getGame(+id)
-      .then((res) => setGame(res))
+      .then((res) => {
+        setGame(res)
+        setLoanding(false)
+        SetGameStock(res.stock)
+      })
   },[])
 
   if(!Object.keys(game).length) return
   
   return (
-    <main>
-      <div className='conteiner' >
-        <div className='game'>
-          <div className='game--img'>
-            <img src={game.img} alt="" />
+    <div className='conteiner' >
+      <h5 className={loanding ? "Loanding" : ""} >{loanding ? "Cargando Datos..." : ""}</h5>
+      <div className='game'>
+        <div className='game--img'>
+          <img src={game.img} alt="" />
+        </div>
+        <div className='game--info'>
+          <div className='game--info-category'>
+            <p>{game.category}</p>
           </div>
-          <div className='game--info'>
-            <div className='game--info-category'>
-              <p>{game.category}</p>
-            </div>
-            <div className='game--info-tittle'>
-              <p>{game.tittle}</p>
-            </div>
+          <div className='game--info-tittle'>
+            <p>{game.tittle}</p>
+          </div>
+          <div>
+            <p>{game.description}</p>
+          </div>
+          <div className='game--buy' >
+            <ItemCount stock={gameStock} />
             <div>
-              <p>{game.description}</p>
+              <p>{game.stock > 15 ? `Stock ${gameStock}`:`¡Solo quedan: ${gameStock}!`}</p>
             </div>
-            <div className='game--buy' >
-              <div className='game--button'>
-                {"Button"}
-              </div>
-              <div>
-                {game.stock}
-              </div>
-            </div>
-            <div className='game--info-price'>
-                <p>{game.price}</p>
-            </div>
+          </div>
+          <div className='game--info-price'>
+              
           </div>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
 
