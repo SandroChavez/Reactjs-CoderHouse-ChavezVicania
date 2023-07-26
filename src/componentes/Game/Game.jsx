@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Juegos = ({id,img,name,category,price}) => {
+const Game = ({id,img,name,category,price}) => {
 
   return (
-    <div>
+    <div id={id} >
       <div>
         <img src={img} alt={name} />
       </div>
@@ -14,4 +14,4 @@ const Juegos = ({id,img,name,category,price}) => {
   )
 }
 
-export default Juegos
+export default Game

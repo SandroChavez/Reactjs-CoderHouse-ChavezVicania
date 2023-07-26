@@ -1,4 +1,6 @@
 $color-principal: rgb(255, 166, 0);
+$gray: rgb(174, 174, 174);
+$category-font-color: rgba(77, 77, 77, 0.75);
 
 html{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -9,14 +11,16 @@ html{
     border: 0;
 }
 
+//Home
 body{
     position: absolute;
+    width: 100%;
     header{
         background-color: $color-principal;
         
         width: 100%;
 
-        position: sticky;
+        position: fixed;
 
         z-index: 2;
 
@@ -28,16 +32,21 @@ body{
 
             gap: 15px;
 
-            height: 80px;
-            .Logo{
+            height: 75px;
+            a{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                img{
-                    width: 55px;
-                    height: auto;
-                    
-                    border-radius: 50%;
+                .Logo{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 55px;
+                        height: auto;
+                        
+                        border-radius: 50%;
+                    }
                 }
             }
             .BarraBusqueda{
@@ -82,25 +91,31 @@ body{
             }
         }
     }
+    
     main{
-        padding: 25px 3rem;
-        
-        .Welcome{
-            padding-bottom: 30px;
-
+        padding: 100px 3rem;
+        .Loanding{
             display: flex;
             justify-content: center;
             align-items: center;
-            .Welcome-text{
-                font-size: 30px;
-            }
+
+            font-size: 30px;
+
+            padding: 200px 0;
+        }
+        .Welcome{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding-bottom: 30px;
         }
         .ItemListContainer{
             display: grid;
         
-            grid-template-columns: repeat(6,1fr);
+            grid-template-columns: repeat(auto-fill,minmax(16rem, 1fr));
 
-            gap: 15px;
+            gap: 1rem;
             .Item{
                 display: flex;
                 flex-direction: column;
@@ -108,16 +123,19 @@ body{
                 justify-content: center;
                 align-items: center;
 
-                padding: 10px 0;
+                padding: 1rem 1rem;
 
-                gap: 5px;
+                gap: 0.8rem;
 
                 border-radius: 10px;
 
-                transition: all 0.1s;
+                transition: all 250ms;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
                 &:hover{
                     filter: opacity(0.9);
-                    background-color: rgb(222, 222, 222);
+                    background-color: $gray;
+
+                    transform: scale(1.05);
                 }
                 .Item--img{
                     overflow:hidden;
@@ -142,7 +160,7 @@ body{
                         gap: 3px;
                         .Item--content-category{
                             font-size: 15px;
-                            color: rgba(62, 62, 62, 0.75);
+                            color: $category-font-color;
                         }
                         .Item--content-tittle{
                             font-size: 18px;
@@ -159,5 +177,66 @@ body{
         }
     }
 }
+
+// Detail
+body{
+    main{
+        .conteiner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .game{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                
+
+                gap: 20px;
+                .game--img{
+                    img{
+                        width: 35vh;
+                        height: auto;
+
+                        border-radius: 10px;
+                    }
+                }
+                .game--info{
+                    display: grid;
+
+                    padding: 20px 0;
+
+                    gap: 10px;
+
+                    .game--info-category{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        color: $category-font-color;
+                    }
+                    .game--info-tittle{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        font-size: 20px;
+                    }
+                    .game--buy{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        gap: 10px;
+                    }
+                    .game--info-price{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 

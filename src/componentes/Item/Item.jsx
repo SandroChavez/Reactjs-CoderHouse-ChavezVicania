@@ -1,13 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Item = ({
+    id,
     tittle,
     category,
     price,
     img,
 }) => {
+
+    const navigate = useNavigate();
+
   return (
-    <div className='Item' >
+    <div className='Item' onClick={() => navigate(`/item/${id}`)}>
         <div className='Item--img'>
             <img src={img} alt={tittle + "-img"} />
         </div>

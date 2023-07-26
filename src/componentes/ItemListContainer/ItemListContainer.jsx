@@ -6,16 +6,16 @@ const ItemListContainer = ({list}) => {
 
     return (
         <div className="ItemListContainer" >
-            {list.map(item => {
-                return(
+            {list.map((item) => 
+                (
                     <Item
-                    key={item.id}
+                    id={item.id}
                     img={item.img}
                     category={item.category}
                     tittle={item.tittle}
                     price={item.price}/>
                 )
-            })}
+            )}
         </div>
     )
 }
