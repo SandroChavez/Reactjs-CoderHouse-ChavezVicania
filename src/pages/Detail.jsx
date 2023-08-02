@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 import { getGame } from '../lib/games.request'
 
@@ -34,7 +34,10 @@ const Detail = () => {
           </div>
           <div className='game--info'>
             <div className='game--info-category'>
-              <p>{game.category.join(" - ")}</p>
+              {game.category.map((element) =>
+              (
+                <p onClick={() => useNavigate(`/category/${element}`)}>{element}</p>
+              ))}
             </div>
             <div className='game--info-tittle'>
               <p>{game.tittle}</p>
