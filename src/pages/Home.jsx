@@ -1,9 +1,9 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import React, {useState, useEffect}from 'react'
 
-import StyleTittle from '../componentes/StyleTittle/StyleTittle'
 import ItemListContainer from "../componentes/ItemListContainer/ItemListContainer"
-import {getGames} from "../lib/games.request.js"
+import Tittle from "../componentes/Tittle/Tittle"
+
+import {cargarData, getGames} from "../lib/games.request.js"
 
 const Home = () => {
 
@@ -21,10 +21,7 @@ const Home = () => {
 
   return (
     <>
-        <StyleTittle className={"Welcome"}>
-          <h1>¡Bienvenido a FenixStore!</h1>
-        </StyleTittle>
-        <h5 className={loanding ? "Loanding" : ""} >{loanding ? "Cargando Datos..." : ""}</h5>
+        <Tittle>¡Bienvenido a FenixStore!</Tittle>
         <ItemListContainer list={games}/>
     </>
   )

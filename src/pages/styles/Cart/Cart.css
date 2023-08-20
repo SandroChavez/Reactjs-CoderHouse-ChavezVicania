@@ -1,0 +1,53 @@
+.cart .cart__games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 0.5rem;
+  padding: 20px 0;
+}
+.cart .cart__games .game-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 30px 10px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+.cart .cart__games .game-cart:hover {
+  background-color: rgb(225, 225, 225);
+}
+.cart .cart__games .game-cart .game__img img {
+  width: 170px;
+  height: auto;
+  border-radius: 10px;
+}
+.cart .cart__games .game-cart .game__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cart .cart__games .game-cart .game__button-remove {
+  background-color: orange;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+.cart .cart__games .game-cart .game__button-remove:active {
+  background-color: black;
+  color: aliceblue;
+}
+.cart .game__button-remove-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart .game__button-remove-all button {
+  padding: 5px 10px;
+  background-color: orange;
+  border-radius: 20px;
+  transition: all 50ms;
+}
+.cart .game__button-remove-all button:active {
+  background-color: black;
+  color: white;
+}/*# sourceMappingURL=Cart.css.map */

@@ -1,0 +1,47 @@
+.conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.conteiner .game {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.conteiner .game .game--img img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+.conteiner .game .game--info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 20px;
+}
+.conteiner .game .game--info .game--info-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+.conteiner .game .game--info .game--info-tittle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.conteiner .game .game--info .game--buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.conteiner .game .game--info .game--info-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=Detail.css.map */

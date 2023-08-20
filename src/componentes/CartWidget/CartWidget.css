@@ -1,0 +1,16 @@
+.carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+.carrito .carrito-icono img{
+    width: 30px;
+    height: auto;
+
+    transition: all 0.2s;
+}
+.carrito .carrito-icono img:hover{
+    transform: scale(1.1);
+}

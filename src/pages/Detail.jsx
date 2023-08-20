@@ -1,25 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState, useCallback } from 'react'
+import { useNavigate, useParams } from "react-router-dom";
 
 import { getGame } from '../lib/games.request'
 
 import ItemCount from '../componentes/ItemCount/ItemCount';
+
+import { useCartContext } from '../contextos/Cart.context'
+
+import "./styles/Detail/Detail.css"
 
 const Detail = () => {
 
   const {id} = useParams()
   const [game,setGame] = useState({})
   const[loanding,setLoanding] = useState(true)
-  const[gameStock,SetGameStock] = useState()
+  const[gameStock,setGameStock] = useState()
+
+  const { addProduct, itemInCart } = useCartContext();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getGame(+id)
+    getGame(id)
       .then((res) => {
         setGame(res)
         setLoanding(false)
-        SetGameStock(res.stock)
+        setGameStock(res.stock)
       })
   },[])
+
+  const handleAdd = useCallback(
+    (qty) => {
+      addProduct(game, qty);
+    },
+    [addProduct, game]
+  );
 
   if(!Object.keys(game).length) return
   
@@ -36,16 +51,19 @@ const Detail = () => {
             <div className='game--info-category'>
               {game.category.map((element) =>
               (
-                <p onClick={() => useNavigate(`/category/${element}`)}>{element}</p>
+                <p onClick={() => {navigate(`/category/${element}`)}}>{element}</p>
               ))}
             </div>
             <div className='game--info-tittle'>
               <p>{game.tittle}</p>
             </div>
             <div className='game--buy' >
-              <ItemCount stock={gameStock} />
+              <ItemCount
+                stock={game.stock - (itemInCart?.(id)?.qty || 0)} //Se obtiene el item si existe en el cart y se le resta al stock la cantidad que este en el cart (si no existe le resta 0 para evitar errores)
+                onAdd={handleAdd}
+              />
               <div className='game--stock'>
-                <p>{gameStock > 15 ? `Stock ${gameStock}`:`¡Solo quedan: ${gameStock}!`}</p>
+                <p>{gameStock > 15 ? `Stock: ${gameStock}`:`¡Solo quedan: ${gameStock}!`}</p>
               </div>
             </div>
             <div className='game--info-price'>
@@ -59,3 +77,4 @@ const Detail = () => {
 }
 
 export default Detail
+ 

@@ -145,8 +145,20 @@ const GAMES = [
     }
 ];
 
-export const getGames = (id) => {
-    const _games = id
+import { 
+    addDoc,
+    collection,
+    doc,
+    getDoc,
+    getDocs,
+    query,
+    where } from "firebase/firestore";
+import { db } from "./config.js"
+
+const gamesRef = collection(db,"items")
+
+export const getGames = async (category) => {
+    /*const _games = id
       ? GAMES.filter((game) => {
         return game.category.some((category) => category == id) == true
       })
@@ -156,15 +168,38 @@ export const getGames = (id) => {
       setTimeout(() => {
         res(_games);
       }, 200);
-    });
+    });*/
+
+    const q = category
+    ? query(gamesRef, where("category","array-contains",category))
+    : gamesRef;
+
+    let games = []
+
+    const querySnapshot = await getDocs(q)
+
+    querySnapshot.forEach((doc) => {
+
+        games = [...games, {...doc.data(),id: doc.id}]
+
+    })
+
+    return games
+        
 };
 
-export const getGame = (id) => {
-  const _game = GAMES.filter((game) => game.id === id)[0];
+export const getGame = async (id) => {
+  
+    const gameRef = doc(db, "items", id)
+    const game = await getDoc(gameRef)
 
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(_game);
-    }, 200);
-  });
+    if(game.exists()) return {id: game.id, ...game.data()}
+
+    return null
 };
+
+export const cargarData = async () =>{
+    GAMES.forEach(async game =>{
+        addDoc(gamesRef, game)
+    })
+}

@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+import { useCartContext } from '../../contextos/Cart.context'
+
+import "./ItemCount.css"
+
 const ItemCount = ({ stock, onAdd }) => {
 
   const [count, setCount] = useState(1);
@@ -12,6 +16,8 @@ const ItemCount = ({ stock, onAdd }) => {
     setCount(Math.max(1, count - 1));
   };
 
+  const {addProduct} = useCartContext()
+
   return (
     <div className="item-count">
       <div className="item-count--buttons">
@@ -20,7 +26,10 @@ const ItemCount = ({ stock, onAdd }) => {
         <button onClick={() => handleSum()}>+</button>
       </div>
       <div className="item-count--add">
-        <button  disabled={!stock} onClick={() => onAdd(count)}>
+        <button  disabled={!stock} onClick={() => {
+              onAdd(count);
+              setCount(1);
+            }}>
           Agregar a carrito
         </button>
       </div>

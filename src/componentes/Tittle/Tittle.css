@@ -1,0 +1,15 @@
+h1{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+    padding: 20px 0;
+}
+.tittle{
+    font-size: 30px;
+
+    transition: all 0.2s;
+}
+.tittle:hover{
+    transform: scale(1.05);
+}

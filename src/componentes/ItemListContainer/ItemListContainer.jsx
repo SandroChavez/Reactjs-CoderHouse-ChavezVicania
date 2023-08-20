@@ -1,11 +1,12 @@
 import React from "react";
 import Item from "../Item/Item";
 
+import "./ItemListContainer.css"
 
 const ItemListContainer = ({list}) => {
 
     return (
-        <div className="ItemListContainer" >
+        <section className="ItemListContainer" >
             {list.map((item) => 
                 (
                     <Item
@@ -16,7 +17,7 @@ const ItemListContainer = ({list}) => {
                     price={item.price}/>
                 )
             )}
-        </div>
+        </section>
     )
 }
 

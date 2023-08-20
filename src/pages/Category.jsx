@@ -2,8 +2,8 @@ import React, { useEffect , useState} from 'react'
 import { getGames } from '../lib/games.request'
 import { useParams } from 'react-router-dom';
 
-import StyleTittle from '../componentes/StyleTittle/StyleTittle';
 import ItemListContainer from '../componentes/ItemListContainer/ItemListContainer';
+import Tittle from "../componentes/Tittle/Tittle"
 
 const Category = () => {
 
@@ -24,9 +24,7 @@ const Category = () => {
 
   return (
     <div>
-      <StyleTittle className={"Welcome"}>
-          <h1>juegos de {id}</h1>
-      </StyleTittle>
+      <Tittle>juegos de {id}</Tittle>
       <h5 className={loanding ? "Loanding" : ""} >{loanding ? "Cargando Datos..." : ""}</h5>
       <ItemListContainer list={games}/>
     </div>

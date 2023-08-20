@@ -1,0 +1,53 @@
+header{
+    background-color: rgb(255, 185, 54);
+    padding: 15px 20px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+    height: 6vh;
+}
+nav{
+    display: grid;
+    grid-template-columns: 80px 3fr 80px;
+    grid-template-rows: 1fr;
+
+    gap: 10px;
+}
+nav .logo{
+    display: flex;
+
+    justify-content: end;
+    align-items: center;
+}
+nav .logo img{
+    width: 50px;
+    height: auto;
+
+    border-radius: 50%;
+}
+nav .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+}
+nav .links a{
+    font-size: 16px;
+
+    transition: all 0.2s;
+
+    padding: 12px;
+
+    border-radius: 15px;
+}
+nav .links a:hover{
+    background-color: black;
+    color: whitesmoke;
+
+    transform: scale(1.05);
+}

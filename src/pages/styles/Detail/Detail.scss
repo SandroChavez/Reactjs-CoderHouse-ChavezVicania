@@ -1,0 +1,60 @@
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    .game{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+        gap: 20px;
+        .game--img{
+            img{
+                width: 300px;
+                height: auto;
+
+                border-radius: 10px;
+            }
+        }
+        .game--info{
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+
+            padding: 20px 0;
+
+            gap: 20px;
+
+            .game--info-category{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: gray;
+            }
+            .game--info-tittle{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 30px;
+            }
+            .game--buy{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                gap: 10px;
+            }
+            .game--info-price{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

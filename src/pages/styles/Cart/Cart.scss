@@ -1,0 +1,76 @@
+.cart{
+    .cart__games{
+        display: grid;
+            
+        grid-template-columns: repeat(auto-fill,minmax(18rem, 1fr));
+    
+        gap: 0.5rem;
+    
+        padding: 20px 0;
+        .game-cart{
+            display: flex;
+        
+            justify-content: center;
+            align-items: center;
+    
+            flex-direction: column;
+    
+            gap: 5px;
+
+            padding:  30px 10px;
+
+            border-radius: 20px;
+
+            transition: all 0.2s;
+            &:hover{
+                background-color: rgb(225, 225, 225);
+            }
+            .game__img{
+                img{
+                    width: 170px;
+                    height: auto;
+    
+                    border-radius: 10px;
+                }
+            }
+            .game__info{
+                display: flex;
+                flex-direction: column;
+    
+                gap: 5px;
+            }
+            .game__button-remove{
+                background-color: orange;
+    
+                padding: 5px 10px;
+    
+                border-radius: 20px;
+                &:active{
+                    background-color: black;
+                    color: aliceblue;
+                }
+            }
+        }
+    }
+    .game__button-remove-all{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        button{
+
+            padding: 5px 10px;
+
+            background-color: orange;
+
+            border-radius: 20px;
+
+            transition: all 50ms;
+
+            &:active{
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+}
