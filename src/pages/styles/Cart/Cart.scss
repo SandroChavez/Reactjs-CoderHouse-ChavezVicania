@@ -1,3 +1,6 @@
+$color-principal: rgb(255, 190, 68);
+$gris-claro: rgb(195, 195, 195);
+
 .cart{
     .cart__games{
         display: grid;
@@ -40,7 +43,7 @@
                 gap: 5px;
             }
             .game__button-remove{
-                background-color: orange;
+                background-color: $color-principal;
     
                 padding: 5px 10px;
     
@@ -61,7 +64,7 @@
 
             padding: 5px 10px;
 
-            background-color: orange;
+            background-color: $color-principal;
 
             border-radius: 20px;
 
@@ -70,6 +73,57 @@
             &:active{
                 background-color: black;
                 color: white;
+            }
+        }
+    }
+    .total{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px 0;
+    }
+    .form{
+        background-color: $color-principal;
+
+        display: grid;
+        grid-template-rows: auto(5,1fr);
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 20px 0;
+        div{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            gap: 2px;
+            input{
+                width: 200px;
+
+                border-radius: 10px;
+
+                padding: 4px;
+
+                transition: all 0.2s;
+                &:focus{
+                    background-color: $gris-claro;
+                }
+            }
+            button{
+                padding: 5px;
+
+                border-radius: 10px;
+
+                transition: all 0.2s;
+                &:active{
+                    background-color: black;
+                    color: white;
+                }
             }
         }
     }

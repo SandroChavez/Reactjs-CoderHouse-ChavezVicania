@@ -16,6 +16,7 @@ const Detail = () => {
   const[loanding,setLoanding] = useState(true)
   const[gameStock,setGameStock] = useState()
 
+
   const { addProduct, itemInCart } = useCartContext();
 
   const navigate = useNavigate();
@@ -25,13 +26,14 @@ const Detail = () => {
       .then((res) => {
         setGame(res)
         setLoanding(false)
-        setGameStock(res.stock)
+        setGameStock(res.stock - (itemInCart(id)?.qty || 0))
       })
   },[])
 
   const handleAdd = useCallback(
     (qty) => {
       addProduct(game, qty);
+      setGameStock(gameStock - qty)
     },
     [addProduct, game]
   );
@@ -59,7 +61,7 @@ const Detail = () => {
             </div>
             <div className='game--buy' >
               <ItemCount
-                stock={game.stock - (itemInCart?.(id)?.qty || 0)} //Se obtiene el item si existe en el cart y se le resta al stock la cantidad que este en el cart (si no existe le resta 0 para evitar errores)
+              stock={gameStock} //Se obtiene el item si existe en el cart y se le resta al stock la cantidad que este en el cart (si no existe le resta 0 para evitar errores)
                 onAdd={handleAdd}
               />
               <div className='game--stock'>
