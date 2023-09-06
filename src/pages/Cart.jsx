@@ -14,16 +14,23 @@ const Cart = () => {
   const [idCompra,setIdCompra] = useState()
 
   const [buyer, setBuyer] = useState({
-    name : "",
-    email : "",
-    email2: "",
-    phone : 0
+    name : undefined,
+    email : undefined,
+    email2: undefined,
+    phone : undefined
   })
 
   const createOrder = async () =>{
 
+    const buyerName = buyer.name
     const buyerEmail = buyer.email
     const buyerEmail2 = buyer.email2
+    const buyerPhone = buyer.phone
+
+    if(!buyerName){
+      alert("Nombre vacio")
+      return
+    }
 
     if(!buyerEmail.includes("@") || !buyerEmail.endsWith(".com")){
       alert("Correo invalido")
@@ -33,6 +40,11 @@ const Cart = () => {
     if(buyerEmail != buyerEmail2){
       alert("El Correo no es igual")
       return 
+    }
+
+    if(isNaN(buyerPhone) || buyerPhone.length < 9){
+      alert("Telfeno invalido")
+      return
     }
 
     const items = cart.map(({id, tittle, qty, price}) => ({id, tittle, qty, price}))
@@ -89,7 +101,7 @@ const Cart = () => {
               </div>
               <div>
                 <span>Repetir Correo: </span>
-                <input type="text" placeholder='Correo' onChange={e => setBuyer({...buyer, email2:e.target.value}) }/>
+                <input type="text" placeholder='Repetir Correo' onChange={e => setBuyer({...buyer, email2:e.target.value}) }/>
               </div>
               <div>
                 <span>Numero: </span>
