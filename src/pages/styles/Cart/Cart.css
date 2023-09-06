@@ -89,4 +89,7 @@
 .cart .form div button:active {
   background-color: black;
   color: white;
+}
+.cart .form .id-compra {
+  padding: 20px;
 }/*# sourceMappingURL=Cart.css.map */

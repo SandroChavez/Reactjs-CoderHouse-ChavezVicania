@@ -22,10 +22,10 @@ const Cart = () => {
 
   const createOrder = async () =>{
 
-    const buyerName = buyer.name
-    const buyerEmail = buyer.email
-    const buyerEmail2 = buyer.email2
-    const buyerPhone = buyer.phone
+    let buyerName = buyer.name
+    let buyerEmail = buyer.email
+    let buyerEmail2 = buyer.email2
+    let buyerPhone = buyer.phone
 
     if(!buyerName){
       alert("Nombre vacio")
@@ -110,10 +110,11 @@ const Cart = () => {
               <div>
                 <button onClick={() => createOrder()}>Realizar pedido</button>
               </div>
+              {!idCompra ? "": (
+              <p className="id-compra" >el id de su compra es: {idCompra}</p>
+              )}
             </div>
-            {!idCompra ? "": (
-              <div className='idCompra' >el id de su compra es: {idCompra}</div>
-            )}
+            
           </>
         )}
       </div>
